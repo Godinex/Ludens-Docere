@@ -1,0 +1,114 @@
+/* IKAROA · Ludens Docere — mapas de pergamino verde, tinta sepia y mar profundo */
+:root { --paper: #efeddf; --map: #e3e8d3; --card: #f8f6ec; --ink: #2b2218; --ink2: #5b4a35; --sea: #2c5560; --rust: #94472a; --line: #c9c3a4; --night: #151413; }
+* { box-sizing: border-box; min-width: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 19px/1.55 "EB Garamond", Georgia, serif; overflow-x: clip; }
+img { max-width: 100%; display: block; }
+a { color: var(--rust); }
+h1, h2, h3 { font-family: "IM Fell English SC", Georgia, serif; font-weight: 400; color: #33281b; margin: 0; line-height: 1.1; text-wrap: balance; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 72px 24px; }
+.wrap.narrow { max-width: 780px; }
+.center { text-align: center; max-width: 780px; margin: 0 auto 28px; }
+.orn { text-align: center; color: var(--rust); letter-spacing: 10px; margin: 8px 0 28px; }
+h2.sec { text-align: center; font-size: clamp(34px, 4.4vw, 50px); }
+h3.sub { text-align: center; margin: 56px 0 18px; font-size: 28px; }
+.kicker { font-family: "IM Fell English SC", serif; font-size: 17px; letter-spacing: 1px; color: #c9a96b; margin: 0 0 6px; }
+.band { background: var(--map); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .card { transition: none !important; } }
+
+.top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; background: rgba(21,20,19,.96); border-bottom: 1px solid #5b4a35; }
+.brand { color: #f1ead6; text-decoration: none; font-family: "IM Fell English SC", serif; font-size: 24px; letter-spacing: 4px; }
+.top nav { display: flex; gap: 22px; }
+.top nav a { color: #d9c69a; text-decoration: none; font-size: 17px; }
+.top nav a:hover { color: #fff; }
+.burger { display: none; background: none; border: 1px solid #7d6a4c; color: #f1ead6; font-size: 20px; border-radius: 6px; padding: 4px 12px; min-height: 44px; cursor: pointer; }
+
+/* portada: el negro de las fotos del producto */
+.hero { background: var(--night); color: #efe6cf; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; gap: 24px; padding: 32px max(4vw, 20px) 56px; }
+.hero-art img { width: 100%; }
+.hero h1 { font-size: clamp(56px, 8vw, 104px); letter-spacing: .14em; color: #f6efdb; }
+.verbs { font-family: "IM Fell English SC", serif; font-size: 20px; color: #c9a96b; margin: 6px 0 16px; }
+.lede { font-size: 20px; color: #ddd2b6; margin: 0; }
+.facts { list-style: none; padding: 0; margin: 26px 0; display: flex; flex-wrap: wrap; border: 1px solid #5b4a35; width: fit-content; }
+.facts li { padding: 10px 18px; text-align: center; border-right: 1px solid #3d3326; }
+.facts li:last-child { border-right: 0; }
+.facts strong { display: block; font-family: "IM Fell English SC", serif; font-size: 28px; color: #f6efdb; font-weight: 400; }
+.facts span { font-size: 15px; color: #c9a96b; }
+.ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--rust); color: #fbf3df; text-decoration: none; font-size: 18px; padding: 11px 22px; border: 1px solid #c58a5f; border-radius: 3px; }
+.btn:hover { background: #a85430; }
+.btn.ghost { background: transparent; color: #efe6cf; border-color: #7d6a4c; }
+
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; }
+.split p { margin: 0 0 14px; }
+figure { margin: 0; }
+figure img { border-radius: 4px; box-shadow: 0 14px 30px rgba(43,34,24,.25); }
+figcaption { font-size: 15px; font-style: italic; color: var(--ink2); margin-top: 8px; }
+.comp { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.comp div, .reglas div { background: var(--card); border: 1px solid var(--line); padding: 16px; }
+.comp b, .reglas b { display: block; font-family: "IM Fell English SC", serif; font-weight: 400; font-size: 19px; color: var(--sea); margin-bottom: 4px; }
+.comp span, .reglas span { font-size: 16px; color: var(--ink2); line-height: 1.35; display: block; }
+
+.steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 44px; }
+.step { position: relative; padding-left: 60px; }
+.step .n { position: absolute; left: 0; top: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rust); display: grid; place-items: center; font-family: "IM Fell English SC", serif; font-size: 22px; color: var(--rust); background: var(--card); }
+.step h3 { font-size: 23px; margin: 8px 0 6px; }
+.step p { margin: 0; color: var(--ink2); }
+.reglas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+
+.mundo { margin: 0 auto 36px; max-width: 980px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 6px; cursor: pointer; text-align: left; font: inherit; color: inherit; transition: transform .15s, box-shadow .15s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(43,34,24,.2); }
+.card:focus-visible, .btn:focus-visible { outline: 3px solid var(--rust); outline-offset: 2px; }
+.card img { aspect-ratio: 1368/936; object-fit: cover; width: 100%; }
+.card .meta { padding: 8px 6px 4px; }
+.card .code { font-size: 14px; color: var(--rust); }
+.card h3 { font-size: 20px; }
+
+.dark { background: var(--night); color: #ddd2b6; }
+.dark p { margin: 0 0 16px; font-size: 20px; }
+.kicker.light { text-align: center; }
+h2.light { color: #f6efdb; }
+.firma { text-align: right; font-style: italic; color: #f1ead6; }
+.firma span { font-style: normal; font-size: 16px; color: #c9a96b; }
+
+.tech { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 18px; margin: 0; }
+.tech dt { font-family: "IM Fell English SC", serif; color: var(--sea); }
+.tech dd { margin: 0; }
+
+footer { background: var(--night); color: #d9c69a; text-align: center; padding: 32px 20px; font-size: 16px; }
+footer p { margin: 4px 0; }
+footer a { color: #e7c98d; }
+
+dialog#ficha-region { border: 1px solid #7d6a4c; padding: 0; background: var(--card); color: var(--ink); max-width: 980px; width: calc(100% - 32px); max-height: 92vh; overflow-y: auto; border-radius: 4px; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+dialog::backdrop { background: rgba(15,13,10,.8); }
+.close { position: sticky; float: right; top: 8px; margin: 8px 8px -52px 0; background: var(--card); border: 0; border-radius: 50%; width: 44px; height: 44px; font-size: 32px; line-height: 1; cursor: pointer; color: var(--rust); z-index: 2; }
+.fx-body { padding: 22px 28px 24px; }
+.fx-code { color: var(--rust); margin: 0; font-size: 16px; }
+.fx-body h3 { font-size: 32px; margin-bottom: 10px; }
+.fx-body h4 { font-family: "IM Fell English SC", serif; font-weight: 400; font-size: 21px; color: var(--sea); margin: 16px 0 4px; }
+.fx-body p { margin: 0 0 10px; }
+.hay { background: var(--map); border-left: 3px solid var(--sea); padding: 10px 14px; }
+.hay b { font-family: "IM Fell English SC", serif; font-weight: 400; color: var(--sea); }
+.fx-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; }
+.fx-nav button { font: 17px "EB Garamond", serif; background: none; border: 1px solid #b7ab84; padding: 8px 14px; min-height: 44px; cursor: pointer; color: var(--ink); }
+
+@media (max-width: 960px) {
+  .top nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--night); border-bottom: 1px solid #5b4a35; }
+  .top nav.open { display: flex; }
+  .top nav a { padding: 14px 24px; border-top: 1px solid #2b2620; }
+  .burger { display: block; }
+  .hero, .split, .steps { grid-template-columns: 1fr; }
+  .comp { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reglas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  body { font-size: 18px; }
+  .wrap { padding: 56px 18px; }
+  .reglas { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .facts li { padding: 8px 12px; }
+  .tech { grid-template-columns: 1fr; gap: 2px; }
+  .tech dd { margin-bottom: 8px; }
+}
